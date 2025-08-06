@@ -1,0 +1,508 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+.bundle-builder {
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Header styles matching reference */
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  font-size: 1.125rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Main Content Layout - matching reference */
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Products section */
+.products-section {
+  width: 100%;
+}
+
+/* Products Grid - 2x3 layout like reference */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 100%;
+}
+
+.product-card {
+  background: white;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: none;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.product-card.selected {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Product images matching reference */
+.product-image {
+  margin-bottom: 0;
+  border-radius: 0;
+  overflow: hidden;
+  aspect-ratio: 1;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.product-info {
+  padding: 1.5rem;
+}
+
+.product-info h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.product-price {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Buttons matching reference design */
+.add-to-bundle-btn {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  background: white;
+  color: #333;
+  border-radius: 0;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  font-size: 0.9rem;
+}
+
+.add-to-bundle-btn:hover {
+  background: #f8f8f8;
+}
+
+.add-to-bundle-btn.added {
+  background: #333;
+  border-color: #333;
+  color: white;
+}
+
+.add-to-bundle-btn.added:hover {
+  background: #222;
+  border-color: #222;
+}
+
+.btn-added {
+  display: none;
+}
+
+.add-to-bundle-btn.added .btn-text {
+  display: none;
+}
+
+.add-to-bundle-btn.added .btn-added {
+  display: inline;
+}
+
+/* Bundle sidebar matching reference */
+.bundle-sidebar {
+  position: sticky;
+  top: 2rem;
+  background: white;
+  border-radius: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: 1px solid #eee;
+}
+
+.sidebar-content {
+  padding: 2rem;
+}
+
+/* Bundle header */
+.bundle-header {
+  margin-bottom: 2rem;
+}
+
+.bundle-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+/* Progress container */
+.progress-container {
+  margin-bottom: 0;
+}
+
+.progress-container p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Hide the progress bar to match reference */
+.progress-bar[role="progressbar"] {
+  display: none;
+}
+
+.progress-text {
+  display: none;
+}
+
+/* Selected Products matching reference */
+.selected-products {
+  margin-bottom: 2rem;
+  min-height: auto;
+}
+
+.empty-state {
+  display: none;
+}
+
+.selected-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.selected-item:first-child {
+  padding-top: 0;
+}
+
+.selected-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.selected-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 0;
+}
+
+.selected-item-info {
+  flex: 1;
+}
+
+.selected-item-name {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.selected-item-price {
+  color: #333;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* Quantity controls matching reference */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.quantity-btn {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #ddd;
+  background: white;
+  color: #333;
+  border-radius: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.quantity-btn:hover {
+  background: #f8f8f8;
+}
+
+.quantity-display {
+  min-width: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.remove-item {
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 0;
+  transition: color 0.2s ease;
+  font-size: 1rem;
+}
+
+.remove-item:hover {
+  color: #666;
+}
+
+/* Bundle Summary matching reference */
+.bundle-summary {
+  border-top: 1px solid #eee;
+  padding-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.discount-row {
+  color: #333;
+}
+
+.discount-row span:first-child::before {
+  content: "- ";
+}
+
+.total-row {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  border-top: 1px solid #eee;
+  padding-top: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+/* Add Bundle Button matching reference */
+.add-bundle-btn {
+  width: 100%;
+  padding: 1rem;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.add-bundle-btn:hover:not(:disabled) {
+  background: #222;
+}
+
+.add-bundle-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Hide bundle savings to match reference */
+.bundle-savings {
+  display: none !important;
+}
+
+/* Responsive Design */
+@media (min-width: 1200px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1200px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .bundle-sidebar {
+    position: static;
+    order: -1;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .header p {
+    font-size: 1rem;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .sidebar-content {
+    padding: 1.5rem;
+  }
+
+  .main-content {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bundle-builder {
+    padding: 1rem 0;
+  }
+
+  .header {
+    margin-bottom: 2rem;
+  }
+
+  .header h1 {
+    font-size: 1.75rem;
+  }
+
+  .sidebar-content {
+    padding: 1rem;
+  }
+}
+
+/* Animation for adding items */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.selected-item {
+  animation: slideIn 0.3s ease;
+}
+
+/* Focus styles for accessibility */
+.add-to-bundle-btn:focus,
+.add-bundle-btn:focus {
+  outline: 2px solid #333;
+  outline-offset: 2px;
+}
+
+.product-card:focus-within {
+  outline: 2px solid #333;
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .product-card {
+    border: 2px solid #000;
+  }
+
+  .add-to-bundle-btn {
+    border: 2px solid #000;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .product-card,
+  .add-to-bundle-btn,
+  .selected-item {
+    transition: none;
+    animation: none;
+  }
+}

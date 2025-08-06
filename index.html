@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Bundle Builder - Save 30% on 3+ Items</title>
+</head>
+<body>
+    <main class="bundle-builder">
+        <div class="container">
+            <!-- Header Section -->
+            <header class="header">
+                <h1>Buy 3 and Save 30%</h1>
+            </header>
+
+            <div class="main-content">
+                <!-- Products Section -->
+                <section class="products-section" aria-label="Available Products">
+                    <h2 class="sr-only">Product Selection</h2>
+                    <div class="products-grid" role="grid" aria-label="Product grid">
+                        <article class="product-card" data-id="1" data-price="59.99" data-name="Floral Summer Dress" data-image="./assets/Products/Product-1.jpg" role="gridcell">
+                            <figure class="product-image">
+                                <img src="./assets/Products/Product-1.jpg" alt="Floral Summer Dress">
+                            </figure>
+                            <div class="product-info">
+                                <h3>Floral Summer Dress</h3>
+                                <p class="product-price" aria-label="Price: 59 dollars and 99 cents">$59.99</p>
+                                <button class="add-to-bundle-btn" data-product-id="1" aria-describedby="bundle-instructions">
+                                    <span class="btn-text">Add to Bundle</span>
+                                    <span class="btn-added">Added to Bundle</span>
+                                </button>
+                            </div>
+                        </article>
+
+                        <article class="product-card" data-id="2" data-price="79.99" data-name="Crop Top" data-image="./assets/Products/Product-2.jpg" role="gridcell">
+                            <figure class="product-image">
+                                <img src="./assets/Products/Product-2.jpg" alt="Crop Top">
+                            </figure>
+                            <div class="product-info">
+                                <h3>Crop Top</h3>
+                                <p class="product-price" aria-label="Price: 79 dollars and 99 cents">$79.99</p>
+                                <button class="add-to-bundle-btn" data-product-id="2" aria-describedby="bundle-instructions">
+                                    <span class="btn-text">Add to Bundle</span>
+                                    <span class="btn-added">Added to Bundle</span>
+                                </button>
+                            </div>
+                        </article>
+
+                        <article class="product-card" data-id="3" data-price="89.99" data-name="Jeans Sweater" data-image="./assets/Products/Product-3.jpg" role="gridcell">
+                            <figure class="product-image">
+                                <img src="./assets/Products/Product-3.jpg" alt="Jeans Sweater">
+                            </figure>
+                            <div class="product-info">
+                                <h3>Jeans Sweater</h3>
+                                <p class="product-price" aria-label="Price: 89 dollars and 99 cents">$89.99</p>
+                                <button class="add-to-bundle-btn" data-product-id="3" aria-describedby="bundle-instructions">
+                                    <span class="btn-text">Add to Bundle</span>
+                                    <span class="btn-added">Added to Bundle</span>
+                                </button>
+                            </div>
+                        </article>
+
+                        <article class="product-card" data-id="4" data-price="129.99" data-name="Wool Blazer" data-image="./assets/Products/Product-4.jpg" role="gridcell">
+                            <figure class="product-image">
+                                <img src="./assets/Products/Product-4.jpg" alt="Wool Blazer - Professional wool blazer perfect for business attire">
+                            </figure>
+                            <div class="product-info">
+                                <h3>Wool Blazer</h3>
+                                <p class="product-price" aria-label="Price: 129 dollars and 99 cents">$129.99</p>
+                                <button class="add-to-bundle-btn" data-product-id="4" aria-describedby="bundle-instructions">
+                                    <span class="btn-text">Add to Bundle</span>
+                                    <span class="btn-added">Added to Bundle</span>
+                                </button>
+                            </div>
+                        </article>
+
+                        <article class="product-card" data-id="5" data-price="49.99" data-name="Cashmere Top" data-image="./assets/Products/Product-5.jpg" role="gridcell">
+                            <figure class="product-image">
+                                <img src="./assets/Products/Product-5.jpg" alt="Cashmere Top">
+                            </figure>
+                            <div class="product-info">
+                                <h3>Cashmere Top</h3>
+                                <p class="product-price" aria-label="Price: 49 dollars and 99 cents">$49.99</p>
+                                <button class="add-to-bundle-btn" data-product-id="5" aria-describedby="bundle-instructions">
+                                    <span class="btn-text">Add to Bundle</span>
+                                    <span class="btn-added">Added to Bundle</span>
+                                </button>
+                            </div>
+                        </article>
+
+                        <article class="product-card" data-id="6" data-price="69.99" data-name="Midi Skirt" data-image="./assets/Products/Product-6.jpg" role="gridcell">
+                            <figure class="product-image">
+                                <img src="./assets/Products/Product-6.jpg" alt="Leather Handbag">
+                            </figure>
+                            <div class="product-info">
+                                <h3>Leather Handbag</h3>
+                                <p class="product-price" aria-label="Price: 69 dollars and 99 cents">$69.99</p>
+                                <button class="add-to-bundle-btn" data-product-id="6" aria-describedby="bundle-instructions">
+                                    <span class="btn-text">Add to Bundle</span>
+                                    <span class="btn-added">Added to Bundle</span>
+                                </button>
+                            </div>
+                        </article>
+
+                        <article class="product-card" data-id="7" data-price="159.99" data-name="Leather Handbag" data-image="./assets/Products/Product-7.jpg" role="gridcell">
+                            <figure class="product-image">
+                                <img src="./assets/Products/Product-7.jpg" alt="Midi Skirt - Elegant midi skirt for versatile styling">
+                            </figure>
+                            <div class="product-info">
+                                <h3>Midi Skirt</h3>
+                                <p class="product-price" aria-label="Price: 159 dollars and 99 cents">$159.99</p>
+                                <button class="add-to-bundle-btn" data-product-id="7" aria-describedby="bundle-instructions">
+                                    <span class="btn-text">Add to Bundle</span>
+                                    <span class="btn-added">Added to Bundle</span>
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Bundle Sidebar -->
+                <aside class="bundle-sidebar" aria-label="Bundle Summary">
+                    <div class="sidebar-content">
+                        <header class="bundle-header">
+                            <h2>Create a Bundle</h2>
+                            <div class="progress-container">
+                                <p>Add at least <strong>3</strong> products and <strong>Save 30%</strong></p>
+                            </div>
+                            <p id="bundle-instructions" class="sr-only">Select 3 or more items to unlock 30% bundle discount</p>
+                        </header>
+
+                        <section class="selected-products" aria-label="Selected Items" aria-live="polite">
+                            <div class="empty-state">
+                                <p>Select 3 or more items to unlock 30% discount</p>
+                            </div>
+                        </section>
+
+                        <section class="bundle-summary" aria-label="Price Summary">
+                            <h3 class="sr-only">Order Summary</h3>
+                            <div class="summary-row discount-row" style="display: none;">
+                                <span>Discount</span>
+                                <span class="discount" aria-live="polite">$135.00 (30%)</span>
+                            </div>
+                            <div class="summary-row total-row">
+                                <span>Subtotal</span>
+                                <span class="total" aria-live="polite">$0.00</span>
+                            </div>
+                        </section>
+
+                        <button class="add-bundle-btn" disabled aria-describedby="bundle-status">
+                            Add 3 Items to Cart
+                        </button>
+                        <p id="bundle-status" class="sr-only">Bundle requires 3 or more items</p>
+
+                        <div class="bundle-savings" style="display: none;" role="status" aria-live="polite">
+                            <p>You're saving <span class="savings-amount">$0.00</span> with this bundle!</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+</html>
